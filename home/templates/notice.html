@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHQTC-BCC Notice</title>
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static '/assets/img/bcc_logo.png' %} ">
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  
+  <!-- Favicons -->
+  <link href="{% static '/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static '/assets/vendor/aos/aos.css' %}" rel="stylesheet">
+
+  <link href="{% static '/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static '/assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static '/assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static '/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  
+  
+
+  <!-- Template Main CSS File -->
+  <link href="{% static '/assets/css/style.css' %}" rel="stylesheet">
+
+  <!-- from main SQTC-->
+  <link href="{% static '/css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div class="main-body">
+
+        <section id="topbar" class="d-flex align-items-center">
+            <div class="container d-flex justify-content-center justify-content-md-between">
+              <div class="contact-info d-flex align-items-center">
+                <i class="bi bi-envelope d-flex align-items-center"><a href="SQTC@bcc.gov.bd">SQTC@bcc.gov.bd</a></i>
+                <i class="bi bi-phone d-flex align-items-center ms-4"><span>+880 1713-118860</span></i>
+              </div>
+              <div class="social-links d-none d-md-flex align-items-center">
+                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+              </div>
+            </div>
+          </section>
+        
+
+          <header id="header" class="d-flex align-items-center">
+            <div class="container d-flex align-items-center justify-content-between">
+        
+              <h1 class="logo"><a href="/home">SHQTC<span>.</span></a></h1>
+              <!-- Uncomment below if you prefer to use an image logo -->
+              <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt=""></a>-->
+        
+              <nav id="navbar" class="navbar">
+                <ul>
+                  <li><a class="nav-link scrollto" href="/home">HOME</a></li>
+                  <li><a class="nav-link scrollto" href="/about">ABOUT</a></li>
+                  <li><a class="nav-link scrollto " href="/price">PRICING</a></li>
+                  <li><a class="nav-link scrollto active" href="/notice">NOTICE</a></li>
+                  <li class="dropdown"><a href="/services"><span>SERVICES</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                      <li><a href="/services/#mobile_app">MOBILE APPS TESTING</a></li>
+                      <li class="dropdown"><a href="/services/#regress_test"><span>REGRESSION TESTING</span> <i class="bi bi-chevron-right"></i></a>
+                        <ul>
+                          <li><a href="/services/#automated_ui">Automated UI Testing</a></li>
+                          <li><a href="/services/#riskbased">Risk based analysis</a></li>
+                          <li><a href="/services/#dependency_testing">Dependency analysis</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="/services/#performance_testing">PERFORMANCE TESTING</a></li>
+                      <li><a href="/services/#functional_testing">FUNCTIONAL TESTING</a></li>
+                    </ul>
+                  </li>
+                  <li><a class="nav-link scrollto" href="/login">LOGIN</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+              </nav><!-- .navbar -->
+        
+            </div>
+          </header><!-- End Header -->
+          <!--Body part-1-->
+          <div class="body-part-about">
+            <h2 class="text-black mb-4 align-items-center" style="text-align: center; margin-top: 20px;">SHQTC NOTICES</h2>
+            <table id="customers" style="width: 100%;">
+              <tr >
+                <th style="width: 33.33%;">Notice Name</th>
+                <th style="width: 33.33%;">Publication Date</th>
+                <th style="width: 33.33%;">Notice</th>
+              </tr>
+              {% for nots in notice%}
+              <tr >
+                <td><p>{{nots.notice_name}}</p></td>
+                <td>
+                  <p>{{nots.upload_date}}</p>
+                </td>
+                <td>
+                  <p><a href="{% static '/upload' %}{{nots.file.url}}" target="_blank">{{nots.notice_name}}{{nots.file.url}}</p>
+                </td>
+              </tr>
+              {%endfor%}
+            </table>
+            </div>
+          
+             
+          
+    
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <h4>Join Our Newsletter</h4>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>CONTACT INFO<span>.</span></h3>
+            <p>
+              Director,SQTC <br>
+              Bangladesh Computer Council<br>
+              E-14/X,ICT Tower, Agargaon<br>
+              Sher e Bangla Nagar, Dhaka-1207<br>
+              <strong>Phone:</strong> +880 1713-118860<br>
+              <strong>Email:</strong> sqtc@bcc.gov.bd<br>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>SITE MAP</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="/home">HOME</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/about">ABOUT</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/price">PRICING</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/notice">NOTICE</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="/services/#mobile_app">MOBILE APPS TESTING</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/services/#regress_test">REGRESSION TESTING</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/services/#performance_testing">PERFORMANCE TESTING</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/services/#functional_testing">FUNCTIONAL TESTING</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Social Networks</h4>
+            <p></p>
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container py-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span>SQTC</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bizland-bootstrap-business-template/ -->
+        Designed by <a href="">SQTC TEAM@RAZU_SHARIF</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+    <!--End of body--> 
+    </div>
+    
+    <!-- Vendor JS Files -->
+    
+    <script src="{% static '/assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+    <script src="{% static '/assets/vendor/aos/aos.js' %}"></script>
+    <script src="{% static '/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+    <script src="{% static '/assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static '/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+    <script src="{% static '/assets/vendor/waypoints/noframework.waypoints.js' %}"></script>
+    <script src="{% static '/assets/vendor/php-email-form/validate.js' %}"></script>
+
+
+  <!-- Template Main JS File -->
+  <script src="{% static '/assets/js/main.js' %}"></script>
+</body>
+</html>

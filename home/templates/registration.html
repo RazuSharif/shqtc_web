@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHQTC-BCC</title>
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static '/assets/img/bcc_logo.png' %} ">
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  
+  <!-- Favicons -->
+  
+  <link href="{% static '/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static '/assets/vendor/aos/aos.css' %}" rel="stylesheet">
+
+  <link href="{% static '/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static '/assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static '/assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static '/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  
+  
+
+  <!-- Template Main CSS File -->
+  <link href="{% static '/assets/css/style.css' %}" rel="stylesheet">
+
+  <!-- from main SQTC-->
+  <link href="{% static '/css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div class="main-body">
+
+        <section id="topbar" class="d-flex align-items-center">
+            <div class="container d-flex justify-content-center justify-content-md-between">
+              <div class="contact-info d-flex align-items-center">
+                <i class="bi bi-envelope d-flex align-items-center"><a href="/home">SHQTC WEBSITE</a></i>
+                <i class="bi bi-phone d-flex align-items-center ms-4"><span>+880 1713-118860</span></i>
+              </div>
+              <div class="social-links d-none d-md-flex align-items-center">
+                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+              </div>
+            </div>
+          </section>
+ 
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <section style="background-color: #2779e2;">
+      <form action="{% url 'saveUser'%}" method="post">
+        {% csrf_token %}
+        <div class="container">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-xl-8">
+            
+            <p class="mb-4 align-items-center" style="text-align: center; color: yellow;">If You are
+            requested any service from SHQTC-BCC. Please register here. <br>After approval you can get acces.</p>
+            <h2 class="text-white mb-4 align-items-center" style="text-align: center;">REGISTRATION</h2>
+            
+            <div class="card" style="border-radius: 15px;">
+              <div class="card-body">
+    
+                <div class="row align-items-center pt-4 pb-3">
+                  <div class="col-md-3 ps-5">
+                    <h6 class="mb-0">Full Name<span style="color: red;">*</span></h6>
+                  </div>
+                  <div class="col-md-9 pe-5">
+                    <input type="text" id="name" name="name" class="form-control form-control-lg" placeholder="Enter Full Name" />
+                  </div>
+                </div>
+                <div id="alert1" style="display: none; align-items: center; color: red; margin-left: 20%;">
+                  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                  Please Enter Full Name, Length must be greater than 4, number not allowed.
+                </div>
+                <div class="row align-items-center pt-4 pb-3">
+                  <div class="col-md-3 ps-5">
+                    <h6 class="mb-0">Mobile Number<span style="color: red;">*</span></h6>
+                  </div>
+                  <div class="col-md-9 pe-5">
+                    <input type="number" id="mobile" name="mobile" class="form-control form-control-lg" placeholder="Enter Mobile Number" pattern="[0-9]{11},[0-9]{3}-[0-9]{10}" required/>
+                  </div>
+                </div>
+                <div id="alertmobile" style="display: none; align-items: center; color: red; margin-left: 20%;">
+                  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    Mobile number must be 11 digits.
+                </div>
+    
+                <div class="row align-items-center py-3">
+                  <div class="col-md-3 ps-5">
+                    <h6 class="mb-0">Email address<span style="color: red;">*</span></h6>
+                  </div>
+                  <div class="col-md-9 pe-5">
+                    <input type="text" id="email" name="email" class="form-control form-control-lg" placeholder="example@example.com" />
+                  </div>
+                </div>
+                <div id="alertemail" style="display: none; align-items: center; color: red; margin-left: 20%;">
+                  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    Insert a valid email.
+                </div>
+
+                <div class="row align-items-center pt-4 pb-3">
+                  <div class="col-md-3 ps-5">
+                    <h6 class="mb-0">Designation<span style="color: red;">*</span></h6>
+                  </div>
+                  <div class="col-md-9 pe-5">
+                    <input type="text" id="designation" name="designation" class="form-control form-control-lg" placeholder="Designation in full form" />
+                  </div>
+                </div>
+
+                <div id="alertdesignation" style="display: none; align-items: center; color: red; margin-left: 20%;">
+                  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                  Please Enter Designation, Length must be greater than 4, number not allowed.
+                </div>
+
+                <div class="row align-items-center pt-4 pb-3">
+                  <div class="col-md-3 ps-5">
+                    <h6 class="mb-0">Organization Name<span style="color: red;">*</span></h6>
+                  </div>
+                  <div class="col-md-9 pe-5">
+                    <input type="text" id="organization" name="organization" class="form-control form-control-lg" placeholder="Organization Name in full form" />
+                  </div>
+                </div>
+                <div id="alertorganization" style="display: none; align-items: center; color: red; margin-left: 20%;">
+                  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                  Please Enter Organization, Length must be greater than 4, number not allowed.
+                </div>
+
+                <div class="row align-items-center py-3">
+                  <div class="col-md-3 ps-5">
+                    <h6 class="mb-0">Quote</h6>
+                  </div>
+                  <div class="col-md-9 pe-5">
+                    <textarea class="form-control" name="quote" rows="3" placeholder="Message sent to SHQTC"></textarea>
+                  </div>
+                </div>
+                
+                <div class="row align-items-center pt-4 pb-3">
+                  <div class="col-md-3 ps-5">
+                    <h6 class="mb-0">Password<span style="color: red;">*</span></h6>
+                  </div>
+                  <div class="col-md-9 pe-5">
+                    <input type="password" id="password" name="password" class="form-control form-control-lg" placeholder="Password" />
+                  </div>
+                </div>
+                <div id="alertpassword" style="display: none; align-items: center; color: red; margin-left: 20%;">
+                  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                  Enter at least 6 digits passowrd.
+                </div>
+
+                <div class="px-5 py-4">
+                  <button type="submit" class="btn btn-primary btn-lg" onclick="return regValidate()">REGISTER</button>
+                </div>
+              </div>
+            </div>
+    
+          </div>
+        </div>
+      </div>
+    </form>
+    </section>
+
+    <div class="container py-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span>SQTC</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bizland-bootstrap-business-template/ -->
+        Designed by <a href="">SQTC TEAM@RAZU_SHARIF</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+    <!--End of body--> 
+    </div>
+    
+    <!-- Vendor JS Files -->
+    
+    <script src="{% static '/assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+    <script src="{% static '/assets/vendor/aos/aos.js' %}"></script>
+    <script src="{% static '/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+    <script src="{% static '/assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static '/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+    <script src="{% static '/assets/vendor/waypoints/noframework.waypoints.js' %}"></script>
+    <script src="{% static '/assets/vendor/php-email-form/validate.js' %}"></script>
+
+
+  <!-- Template Main JS File -->
+  <script src="{% static '/assets/js/main.js' %}"></script>
+  <script type="text/javascript" src="{% static '/js/rs.js' %}"></script>
+</body>
+</html>
